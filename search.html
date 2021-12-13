@@ -1,42 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title> Search Donors</title>
 
-        <link rel="stylesheet" href="searchStyle.css">
-    </head>
+<?php
+include "database.php";
+$result=mysqli_query($conn,"SELECT * FROM camp ORDER BY ID DESC");
 
-    <body>
-        <div class="full-page">
-            <div class="navbar">
-                <div>
-                    <a href='search.html'>Search Donors</a>
-                </div>
-                <nav>
-                    <ul id='MenuItems'>
-                        <li><a href='logout.php'>Log out</a></li>
-                    </ul>
-                </nav>
-    
-            </div>
-     
-
- 
-        <div id='login-form'class='login-page'>
-
-            <div class="form-box">
-    <form id='login' class='input-group-login' action="listDonors.html">
-        <input type='text'class='input-field'placeholder='enter blood group' required >
-        <input type='text'class='input-field'placeholder='enter address' required>
+?>
+<html>  
+ <head>  
+          <title>Update camp vanue</title>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>            
+   
+          <script src="jquery.tabledit.js"></script>
 
 
+    </head>  
+    <body>  
+  <div class="container">  
+   <br />  
+   <br />  
+   <br />  
+<div class="table-responsive">  
+    <h3 align="center">Update camp vanue</h3><br />  
+    <table id="my-table" class="table table-bordered table-striped">
+     <thead>
+      <tr>
+       <th>ID</th>
+       <th>Date</th>
+       <th>Day</th>
+       <th>Vanue</th>
+       <th>Time</th>
+      </tr>
+     </thead>
+     <tbody>
+     <?php
+     while($row = mysqli_fetch_array($result))
+     {
+      echo '
+      <tr>
+       <td>'.$row["ID"].'</td>
+       <td>'.$row["date"].'</td>
+       <td>'.$row["day"].'</td>
+       <td>'.$row["vanue"].'</td>
+       <td>'.$row["time"].'</td>
+      </tr>
+      ';
+     }
+     ?>
+     </tbody>
+    </table>
+   </div>  
+  </div>  
+ </body>  
+</html>  
+<script>  
 
-        <button type='submit'class='submit-btn'>Submit</button>
-</form>     
-</div>
-</div>
-</div>
+$('#my-table').Tabledit({
+      url:'updateCampDb.php',
+      columns:{
+       identifier:[0, "ID"],
+       editable:[[1, 'date'], [2, 'day'], [3, 'vanue'], [4, 'time']]
+  }
+});
 
-    </body>
-</html>

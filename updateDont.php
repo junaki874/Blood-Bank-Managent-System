@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="pageStyle.css">
-
+<title>Update Donation Form</title>
 </head>  
 <body> 
 

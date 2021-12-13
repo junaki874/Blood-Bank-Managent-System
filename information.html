@@ -1,62 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Personal Information</title>
-        <link rel="stylesheet" href="infoStyle.css">
-    </head>
-
+<html>
+<head>
+  <title>View Information</title>
+</head>
 <body>
-    <div class="full-page">
-        <div class="navbar">
-            <div>
-                <a href='information.html'>Personal Information</a>
-            </div>
-            <nav>
-                <ul id='MenuItems'>
 
-                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Add Profile</button></li>
-                    <li><a href='#'>View</a></li>
-                    <li><a href='#'>Edit</a></li>
-                    <li><a href='logout.php'>Log out</a></li>
-                </ul>
-            </nav>
+<table border="2">
+  <tr>
+    <td>Reason</td>
+    <td>Hospital_Name</td>
+    <td>Address</td>
+    <td>Cont_Num</td>
+    <td>Blood_grp</td>
+    <td>Time</td>
+  </tr>
 
-        </div>
-  
+<?php
 
- 
-<div id='login-form'class='login-page'>
+include "database.php";
 
-<div class="form-box">
+$sql = "SELECT * FROM request";
+$result = $conn->query($sql);
 
-    <form id='login' class='input-group-login'method="post" action="infoDatabase.php" >
-       
-        <input type='text'class='input-field' name="Name" placeholder='enter name' required >
-        <input type='text'class='input-field'name="Address" placeholder='enter address' required>
-        <input type='text'class='input-field' name="Blood_grp" placeholder='enter blood group' required>
-        <input type='text'class='input-field' name="Phn_Num" placeholder='contact number' required>
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo        
+        '<tr>
+             <td>'.$row['reason'].'</td>
+             <td>'.$row['hospital_name'].'</td>
+             <td>'.$row['hospital_adress'].'</td>
+             <td>'.$row['contact_num'].'</td>
+             <td>'.$row['blod_grp'].'</td>
+             <td>'.$row['time'].'</td>
 
+      
+        </tr>';
 
-
-        <button type='submit' name="save" class='submit-btn'>save</button>
-</form>     
-</div>
-</div>
-</div>
-
-	<script>
-        var modal = document.getElementById('login-form');
-        window.onclick = function(event) 
-        {
-            if (event.target == modal) 
-            {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
+    }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+</table>
 </body>
-
-
 </html>
