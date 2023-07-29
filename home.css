@@ -4,10 +4,10 @@ body{
     box-sizing: border-box;
 }
 .full-page {
-    height: 200px;
+    height: 50%;
 	width: 100%;
-	background-image: url(bld.jpeg);
-
+	background-image: linear-gradient(rgba(114, 57, 57, 0.4),rgba(0,0,0,0.4)),url(bld.jpeg);
+    
 	position: relative;
 }
 .navbar
@@ -18,6 +18,9 @@ body{
     padding-left: 50px;
     padding-right: 30px;
     padding-top: 50px;
+}
+.navbar .blood{
+    color: rgb(4, 70, 4);
 }
 nav
 {
@@ -38,7 +41,7 @@ nav ul li a
 {
     text-decoration: none;
     font-size: 20px;
-    color: lightpink;
+    color: rgb(4, 70, 4);
     font-family: sans-serif;
 }
 nav ul li button
@@ -185,3 +188,18 @@ span
 	font-size: 15;
 }
 
+.homepage{
+    display: flex;
+    width: 100%;
+}
+.homepage .tex{
+    color: black;
+    font-size: 15px;
+    margin-left: 20px;
+    height: 200px;
+    width: 60%;
+}
+.homepage .hompik{
+    width: 40%;
+    height: 200px;
+}

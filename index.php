@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Blood Bank</title>
-    <link rel="stylesheet" href="infoStyle.css">
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="register.php">
   
 </head>
@@ -11,12 +11,12 @@
     <div class="full-page">
         <div class="navbar">
             <div>
-                <a href='index.php'>Blood Bank</a>
+                <a href='index.php' class="blood">Blood Bank Management System</a>
             </div>
             <nav>
                 <ul id='MenuItems'>
                
-                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto; color:rgb(4, 70, 4);">Login</button></li>
                    <li><a href='admin.php'>Admin</a></li>
                 </ul>
             </nav>
@@ -53,7 +53,19 @@
             </div>
         </div>
     </div>
-   
+   <br> <br>
+
+    <div class="homepage">
+        <div class="tex">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero labore omnis iste provident perspiciatis aspernatur fugiat, quisquam quasi sequi ipsum quis commodi maiores tempora esse, exercitationem tempore delectus explicabo molestiae sapiente cumque temporibus deleniti facilis! Tenetur error, obcaecati natus in nobis repellat laborum deleniti sunt fugiat ab, voluptate ipsam. Esse voluptatem cumque autem maiores molestias dolorem animi aliquam labore quaerat porro nulla illo mollitia culpa iste quia neque quisquam, molestiae deserunt ad. Quasi tempora exercitationem unde veritatis amet, itaque, odit laboriosam, natus suscipit quas ipsam reprehenderit optio quia beatae! Voluptate nobis molestiae excepturi totam? Nobis enim libero ea. Esse quo veniam vitae, recusandae atque aut accusantium minima iure impedit sint perspiciatis ea eaque magni obcaecati laboriosam quas omnis possimus! Impedit, deserunt quisquam cumque sunt illo maxime et vitae fugit nesciunt harum nostrum, laborum reiciendis. Debitis ab sint voluptatibus, officiis ducimus nesciunt impedit doloribus nobis quos inventore fuga ea quidem eum et consequuntur praesentium cum nostrum. Omnis sequi est accusantium dolorem. Porro nobis ab similique voluptatem nesciunt molestiae quidem esse amet ipsum eius, obcaecati quod dolorum doloribus vero labore tempore blanditiis saepe voluptas, molestias facere ullam modi odio quia veniam. Rerum consectetur neque ad error in. Earum quod quisquam perspiciatis quam?
+                
+            </h3>
+        </div>
+
+        <div class="hompik">
+            <img src="bldpic.jpeg" alt="">
+        </div>
+    </div>
 
     <script>
         var x=document.getElementById('login');
